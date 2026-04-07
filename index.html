@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>12x12 Glossary</title>
+    <meta name="description" content="A comprehensive, beautifully designed glossary for the 12 Steps and 12 Traditions.">
+    <meta name="theme-color" content="#0d1117">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-192.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- Header with Glassmorphism -->
+        <header class="glass-header">
+            <div class="header-top">
+                <h1>12x12 Glossary</h1>
+                <div class="stats" id="stats">Loading...</div>
+            </div>
+            <div class="search-container">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" id="searchInput" placeholder="Search word or page #..." autocomplete="off">
+                <button id="clearSearch" class="clear-btn" aria-label="Clear search" style="display: none;">
+                    &times;
+                </button>
+            </div>
+        </header>
+
+        <!-- Term Scroller Content -->
+        <main class="term-list" id="termList">
+            <!-- Dynamic terms will be injected here -->
+            <div class="loading-state">
+                <div class="spinner"></div>
+                <p>Loading terminology...</p>
+            </div>
+        </main>
+        
+        <div class="no-results" id="noResults" style="display: none;">
+            <div class="no-results-icon">🤔</div>
+            <p>No terms found.</p>
+            <span class="subtext">Try another word or page number.</span>
+        </div>
+
+    </div>
+    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('Service Worker registered'))
+                    .catch(err => console.error('Service Worker registration failed:', err));
+            });
+        }
+    </script>
+</body>
+</html>
