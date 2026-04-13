@@ -23,17 +23,47 @@
         <header class="glass-header">
             <div class="header-top">
                 <h1>12x12 Glossary</h1>
-                <div class="stats" id="stats">Loading...</div>
+                <div class="header-controls">
+                    <button id="sortToggle" class="sort-btn" title="Toggle sort order">A–Z</button>
+                    <div class="stats" id="stats">Loading...</div>
+                </div>
             </div>
             <div class="search-container">
                 <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="11" cy="11" r="8"></circle>
                     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 </svg>
-                <input type="text" id="searchInput" placeholder="Search word or page #..." autocomplete="off">
+                <input type="text" id="searchInput" placeholder="Search terms or page #…" autocomplete="off">
                 <button id="clearSearch" class="clear-btn" aria-label="Clear search" style="display: none;">
                     &times;
                 </button>
+            </div>
+            <div class="filter-row" id="filterRow">
+                <button class="filter-chip active" data-filter="all">All</button>
+                <button class="filter-chip" data-filter="step-1">Step 1</button>
+                <button class="filter-chip" data-filter="step-2">Step 2</button>
+                <button class="filter-chip" data-filter="step-3">Step 3</button>
+                <button class="filter-chip" data-filter="step-4">Step 4</button>
+                <button class="filter-chip" data-filter="step-5">Step 5</button>
+                <button class="filter-chip" data-filter="step-6">Step 6</button>
+                <button class="filter-chip" data-filter="step-7">Step 7</button>
+                <button class="filter-chip" data-filter="step-8">Step 8</button>
+                <button class="filter-chip" data-filter="step-9">Step 9</button>
+                <button class="filter-chip" data-filter="step-10">Step 10</button>
+                <button class="filter-chip" data-filter="step-11">Step 11</button>
+                <button class="filter-chip" data-filter="step-12">Step 12</button>
+                <button class="filter-chip" data-filter="trad-1">Trad 1</button>
+                <button class="filter-chip" data-filter="trad-2">Trad 2</button>
+                <button class="filter-chip" data-filter="trad-3">Trad 3</button>
+                <button class="filter-chip" data-filter="trad-4">Trad 4</button>
+                <button class="filter-chip" data-filter="trad-5">Trad 5</button>
+                <button class="filter-chip" data-filter="trad-6">Trad 6</button>
+                <button class="filter-chip" data-filter="trad-7">Trad 7</button>
+                <button class="filter-chip" data-filter="trad-8">Trad 8</button>
+                <button class="filter-chip" data-filter="trad-9">Trad 9</button>
+                <button class="filter-chip" data-filter="trad-10">Trad 10</button>
+                <button class="filter-chip" data-filter="trad-11">Trad 11</button>
+                <button class="filter-chip" data-filter="trad-12">Trad 12</button>
             </div>
         </header>
 

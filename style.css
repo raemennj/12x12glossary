@@ -57,7 +57,80 @@ body {
 .header-top {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Sort toggle button */
+.sort-btn {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.03em;
+}
+
+.sort-btn:hover {
+    background: rgba(255,255,255,0.1);
+    color: var(--text-primary);
+}
+
+.sort-btn.sort-active {
+    background: rgba(88, 166, 255, 0.15);
+    border-color: rgba(88, 166, 255, 0.4);
+    color: var(--accent-color);
+}
+
+/* Chapter filter chip row */
+.filter-row {
+    display: flex;
+    gap: 0.4rem;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    flex-wrap: nowrap;
+}
+
+.filter-row::-webkit-scrollbar {
+    display: none;
+}
+
+.filter-chip {
+    flex-shrink: 0;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    color: var(--text-secondary);
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.3rem 0.7rem;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    font-family: 'Inter', sans-serif;
+    white-space: nowrap;
+}
+
+.filter-chip:hover {
+    background: rgba(255,255,255,0.09);
+    color: var(--text-primary);
+}
+
+.filter-chip.active {
+    background: rgba(88, 166, 255, 0.15);
+    border-color: rgba(88, 166, 255, 0.4);
+    color: var(--accent-color);
 }
 
 h1 {
