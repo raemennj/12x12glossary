@@ -77,22 +77,22 @@ document.addEventListener('DOMContentLoaded', () => {
             const displayName = query && !searchPageNum ? highlightText(termName, query) : termName;
             const displayDef = query && !searchPageNum ? highlightText(defText, query) : defText;
 
-            // Render page badges, highlighting the searched page
+            // Render page numbers at the bottom as simple text
             let pagesHtml = '';
             if (pages.length > 0) {
-                // Determine if we should show a specific subset or all pages. For now just show all
-                pagesHtml = `<div class="term-pages">` + pages.map(pg => {
+                const pageNums = pages.map(pg => {
                     const isHighlight = searchPageNum !== null && Number(pg) === searchPageNum;
-                    return `<span class="page-badge ${isHighlight ? 'highlight' : ''}">${pg}</span>`;
-                }).join('') + `</div>`;
+                    return isHighlight
+                        ? `<span class="page-highlight">${pg}</span>`
+                        : pg;
+                }).join(', ');
+                pagesHtml = `<div class="term-pages">p. ${pageNums}</div>`;
             }
 
             card.innerHTML = `
-                <div class="term-header">
-                    <div class="term-word">${displayName}</div>
-                    ${pagesHtml}
-                </div>
+                <div class="term-word">${displayName}</div>
                 <div class="term-def">${displayDef}</div>
+                ${pagesHtml}
             `;
             
             fragment.appendChild(card);

@@ -189,14 +189,6 @@ input[type="text"]:focus + .search-icon,
     opacity: 1;
 }
 
-.term-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 0.75rem;
-    gap: 1rem;
-}
-
 .term-word {
     font-size: 1.25rem;
     font-weight: 600;
@@ -204,40 +196,25 @@ input[type="text"]:focus + .search-icon,
     letter-spacing: -0.3px;
     text-transform: capitalize;
     line-height: 1.2;
-}
-
-.term-pages {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    justify-content: flex-end;
-    flex-shrink: 0;
-}
-
-.page-badge {
-    background: rgba(88, 166, 255, 0.1);
-    color: var(--accent-color);
-    font-size: 0.7rem;
-    font-weight: 700;
-    padding: 0.25rem 0.5rem;
-    border-radius: 20px;
-    border: 1px solid rgba(88, 166, 255, 0.2);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.page-badge.highlight {
-    background: var(--accent-color);
-    color: #000;
-    border-color: var(--accent-color);
-    box-shadow: 0 0 10px var(--accent-glow);
+    margin-bottom: 0.5rem;
 }
 
 .term-def {
     color: var(--text-secondary);
     font-size: 0.95rem;
     line-height: 1.6;
+}
+
+.term-pages {
+    margin-top: 0.75rem;
+    font-size: 0.78rem;
+    color: #4a5568;
+    letter-spacing: 0.01em;
+}
+
+.page-highlight {
+    color: var(--accent-color);
+    font-weight: 700;
 }
 
 /* Loading & Empty States */
